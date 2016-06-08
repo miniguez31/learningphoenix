@@ -16,7 +16,7 @@
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
-
+.idea/*
 # Gradle:
 .idea/gradle.xml
 .idea/libraries
@@ -115,3 +115,18 @@ fabric.properties
 # *.iml
 # modules.xml
 
+# Created by https://www.gitignore.io/api/phoenix
+
+### Phoenix ###
+# Phoenix: a web framework for Elixir
+_build/
+/db
+/deps
+/*.ez
+node_modules/
+erl_crash.dump
+/priv/static/
+/config/prod.secret.exs
+/rel
+# Created by https://www.gitignore.io/api/phoenix
+/phoenix.iml
