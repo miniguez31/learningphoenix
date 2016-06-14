@@ -1,10 +1,14 @@
 <h1>Listing Users</h1>
-
+<div align="right"><%= link "New user", to: user_path(@conn, :new), class: "btn btn-success btn-xs" %></div>
 <table class="table">
     <%= for user <- @users do %>
     <tr>
     <td><%= render "user.html", user: user %></td>
-    <td><%= link "View", to: user_path(@conn, :show, user.id) %></td>
+    <td>
+        <%= link "View", to: user_path(@conn, :show, user.id) , class: "btn btn-primary btn-xs" %>
+        <%= link "Update", to: user_path(@conn, :edit, user.id), method: :get, class: "btn btn-info btn-xs" %>
+        <%= link "Delete", to: user_path(@conn, :delete, user.id), method: :delete, class: "btn btn-danger btn-xs" , data: [confirm: "Really?"] %>
+    </td>
     </tr>
     <% end %>
 </table>
