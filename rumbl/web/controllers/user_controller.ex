@@ -1,6 +1,7 @@
 defmodule Rumbl.UserController do
   use Rumbl.Web, :controller
   alias Rumbl.User
+  alias Rumbl.Video
 
   plug :authenticate_user when action in [:index, :show]
   plug :scrub_params, "user" when action in [:create, :update]
