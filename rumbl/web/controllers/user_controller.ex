@@ -57,11 +57,18 @@ defmodule Rumbl.UserController do
 
   def delete(conn, %{"id" => id}) do
       user = Repo.get!(User, id)
-      Repo.delete!(user)
+      if !Repo.get_by(Video, user_id: id) do
+        Repo.delete!(user)
 
-      conn
-      |> put_flash(:info, "User deleted successfully.")
-      |> redirect(to: user_path(conn, :index))
+        conn
+        |> put_flash(:info, "User deleted successfully.")
+        |> redirect(to: user_path(conn, :index))
+      else
+        conn
+        |> put_flash(:error, "Please first delete your videos.")
+        |> redirect(to: user_path(conn, :index))
+      end
+
   end
 
 end
