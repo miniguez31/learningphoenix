@@ -8,8 +8,14 @@ defmodule Rumbl.VideoController do
   plug :load_categories when action in [:new, :create, :edit, :update]
 
   def index(conn, _params, user) do
-    videos = Repo.all(user_videos(user))
-    render(conn, "index.html", videos: videos)
+      query = from(
+          v in Video,
+          join: c in assoc(v, :category),
+          where: v.user_id == ^user.id,
+          select: {v, c}
+      )
+      videos = Repo.all(query)
+      render(conn, "index.html", videos: videos)
   end
 
   def new(conn, _params, user) do

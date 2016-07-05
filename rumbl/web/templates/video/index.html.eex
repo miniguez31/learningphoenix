@@ -7,17 +7,19 @@
       <th>Url</th>
       <th>Tittle</th>
       <th>Description</th>
+      <th>Category</th>
 
       <th></th>
     </tr>
   </thead>
   <tbody>
-<%= for video <- @videos do %>
+<%= for {video, category} <- @videos do %>
     <tr>
       <td><%= video.user_id %></td>
       <td><%= video.url %></td>
       <td><%= video.tittle %></td>
       <td><%= video.description %></td>
+      <td><%= category.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: video_path(@conn, :show, video), class: "btn btn-default btn-xs" %>
