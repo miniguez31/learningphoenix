@@ -3,7 +3,7 @@ defmodule Rumbl.Video do
 
   schema "videos" do
     field :url, :string
-    field :tittle, :string
+    field :title, :string
     field :description, :string
     belongs_to :user, Rumbl.User
     belongs_to :category, Rumbl.Category
@@ -11,7 +11,7 @@ defmodule Rumbl.Video do
     timestamps
   end
 
-  @required_fields ~w(url tittle description)
+  @required_fields ~w(url title description)
   @optional_fields ~w(category_id)
 
   @doc """
