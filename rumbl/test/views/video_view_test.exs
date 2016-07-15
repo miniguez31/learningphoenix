@@ -1,7 +1,6 @@
 defmodule Rumbl.VideoViewTest do
   use Rumbl.ConnCase, async: true
   import Phoenix.View
-  alias Rumbl.Video
   alias Rumbl.User
 
   test "renders index.html", %{conn: conn} do
