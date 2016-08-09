@@ -1,0 +1,18 @@
+<?xml version ='1.0' encoding='UTF-8'?>
+        <queryresult success='true'
+                     error = 'false'
+                     numpods = '6'
+                     datatypes = 'Math'
+                     timedout = ''
+                     timedoutpods = ''
+                     timing = '0.922'
+                     parsetimedout = 'false'
+                     recalculate = ''
+                     id ='G722T2-8X78T59GYY'
+                     host = 'http://www4b.wolframalpha.com'
+                     server = '7'
+                     related = 'http://ww4b.wolframalpha.com/api/v2/ralatedQueries.jsp'
+                     version = '2.6'
+        >
+
+        </queryresult>
